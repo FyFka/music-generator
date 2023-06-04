@@ -48,12 +48,8 @@ export class Header extends LitElement {
     `,
   ];
 
-  _handleHeaderInnerClick(evt) {
-    evt.preventDefault();
-  }
-
   render() {
-    return html`<a class="header-inner" href="/" @click="${this._handleHeaderInnerClick}">
+    return html`<a class="header-inner" href="/">
       <div class="header-logo"></div>
       <h1 class="header-app-name">Music generator</h1>
     </a>`;

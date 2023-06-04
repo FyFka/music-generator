@@ -1,9 +1,12 @@
-import { Header, Main } from "./components";
+import { Router } from "@vaadin/router";
+import { Header } from "./components";
 import { registerComponent } from "./utils/register";
+import { registerRoutes } from "./pages/routes";
 
 function main() {
-  registerComponent("web-header", Header);
-  registerComponent("web-main", Main);
+  registerComponent("mg-header", Header);
+  const router = new Router(document.querySelector("mg-outlet"));
+  router.setRoutes(registerRoutes());
 }
 
 main();
