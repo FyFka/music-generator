@@ -1,8 +1,10 @@
 import { registerComponent } from "../utils/register";
+import { About } from "./about";
 import { NotFound } from "./not-found";
 
 export function registerRoutes() {
   registerComponent("mg-not-found", NotFound);
+  registerComponent("mg-about", About);
 
   return [
     { path: "/", component: "mg-about", title: "About", isHidden: false },

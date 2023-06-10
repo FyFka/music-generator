@@ -1,12 +1,11 @@
 import { LitElement, html, css } from "lit";
-import { Router } from "@vaadin/router";
 import { GLOBAL_APP_STORE } from "../main";
 
 export class Header extends LitElement {
   static styles = [
     css`
       :host {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         display: flex;
@@ -16,6 +15,8 @@ export class Header extends LitElement {
         width: 100%;
         padding: 0 1rem;
         box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        z-index: 2147483647;
+        background: #fff;
       }
 
       .header-inner {
@@ -37,11 +38,9 @@ export class Header extends LitElement {
       }
 
       .header-app-name {
-        margin: 0;
-      }
-
-      .header-app-name {
         color: #202124;
+        margin: 0;
+        white-space: nowrap;
       }
 
       .header-app-name::first-letter {
@@ -78,6 +77,12 @@ export class Header extends LitElement {
       .header-target-route:hover {
         background-color: #f8f9fa;
         color: #202124;
+      }
+
+      @media (max-width: 628px) {
+        .header-app-name {
+          display: none;
+        }
       }
     `,
   ];

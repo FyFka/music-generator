@@ -15,6 +15,7 @@
     "tone": "^14.7.77"
   },
   "devDependencies": {
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-md-to-html": "^0.0.18"
   }
 }
